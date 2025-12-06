@@ -7,7 +7,7 @@ import requests
 import yt_dlp
 from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
-from SONALI import VideosSearch
+from py_yt import VideosSearch
 from SONALI.utils.database import is_on_off
 from SONALI import app
 from SONALI.utils.formatters import time_to_seconds
