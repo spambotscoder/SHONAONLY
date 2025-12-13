@@ -14,10 +14,10 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 
 import config
-from SONALI import app
-from SONALI.misc import _boot_
-from SONALI.plugins.sudo.sudoers import sudoers_list
-from SONALI.utils.database import (
+from NOBITA import app
+from NOBITA.misc import _boot_
+from NOBITA.plugins.sudo.sudoers import sudoers_list
+from NOBITA.utils.database import (
     add_served_chat,
     add_served_user,
     blacklisted_chats,
@@ -25,9 +25,9 @@ from SONALI.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from SONALI.utils.decorators.language import LanguageStart
-from SONALI.utils.formatters import get_readable_time
-from SONALI.utils.inline import help_pannel, private_panel, start_panel
+from NOBITA.utils.decorators.language import LanguageStart
+from NOBITA.utils.formatters import get_readable_time
+from NOBITA.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
 
@@ -42,6 +42,37 @@ EFFECT_ID = [
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
 async def start_pm(client, message: Message, _):
+
+    loading_1 = await message.reply_text(random.choice(GREET))
+    await add_served_user(message.from_user.id)
+    
+    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>ᴅɪηɢ ᴅᴏηɢ.❤️‍🔥</b>")
+    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>ᴅɪηɢ ᴅᴏηɢ..❤️‍🔥</b>")
+    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>ᴅɪηɢ ᴅᴏηɢ...❤️‍🔥</b>")
+    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>ᴅɪηɢ ᴅᴏηɢ......❤️‍🔥</b>")
+    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>sᴛᴧʀᴛɪηɢ...❤️‍🔥</b>")
+    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>sᴛᴧʀᴛɪηɢ....❤️‍🔥</b>")
+    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>sᴛᴧʀᴛɪηɢ.....❤️‍🔥</b>")
+    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>sᴛᴧʀᴛɪηɢ......❤️‍🔥</b>")
+    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>𝐕ᴀɴsʜɪᴋᴀ</b>")
+    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>𝐕ᴀɴsʜɪᴋᴀ ꭙ</b>")
+    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>˹ 𝐕ᴀɴsʜɪᴋᴀ ꭙ 𝐌ᴜsɪᴄ ˼ ♪</b>")
+    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>sᴛᴧʀᴛed!🥀</b>")
+    await asyncio.sleep(0.1)
+    await loading_1.delete()
+    
     await add_served_user(message.from_user.id)
     await message.react("🍓")
     if len(message.text.split()) > 1:
@@ -172,5 +203,6 @@ async def welcome(client, message: Message):
                 await message.stop_propagation()
         except Exception as ex:
             print(ex)
+
 
 
